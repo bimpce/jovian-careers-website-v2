@@ -1,53 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Jovian careers</title>
-  <style>
-    h1{
-      font-size: 40px;
-      font-family: Roboto;
-      font-weight: normal;
-      color: rgb(50, 50, 50);
-      text-align: center;
-    }
-
-    #banner{
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-    }
-
-    h2{
-      font-size: 32px;
-      font-family: Roboto;
-      font-weight: normal;
-      color: rgb(100, 100, 100);
-      text-align: center;
-    }
-
-    .bodytext{
-      font-family: Roboto;
-      color: rgb(80, 80, 80);      
-    }
-
-    #container{
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <title>Jovian careers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        #banner{
+          width: 100%;
+          height: 360px;
+          object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-  <div id="container">
-    <h1>Jovian careers</h1>
-    <img id="banner" src="../static/banner.jpg">
-    <h2>About Jovian</h2>
-    <p class="bodytext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique commodo aliquet. Morbi molestie elit quis sapien efficitur facilisis. Duis nunc turpis, molestie in pulvinar eu, auctor a lorem. Phasellus egestas mi magna, sit amet posuere tellus blandit et. Cras sodales tempus lorem sit amet eleifend. Nullam rhoncus lorem a sagittis vestibulum. Suspendisse a ipsum a quam accumsan tristique. Aliquam erat volutpat.</p>
-    <h2>Open Positions</h2>
-    <p class="bodytext">TODO - Show the jobs here</p>
-    <div style="text-align: center;">
-       <button>Contact Us</button>
-       <p>Copyright 2022,.....</p>
+  <div class="container">
+    <h1 class="text-center mt-2 mb-4">Jovian careers</h1>    
+    <img id="banner" class="img-fluid" src="../static/banner.jpg">    
+    <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique commodo aliquet. Morbi molestie elit quis sapien efficitur facilisis. Duis nunc turpis, molestie in pulvinar eu, auctor a lorem. Phasellus egestas mi magna, sit amet posuere tellus blandit et. Cras sodales tempus lorem sit amet eleifend. Nullam rhoncus lorem a sagittis vestibulum. Suspendisse a ipsum a quam accumsan tristique. Aliquam erat volutpat.</p>
+    <h2 class="text-center mt-2 mb-4" >Open Positions</h2>
+    <div>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}   
+    </div>    
+    <div class="text-center">
+       <button class="btn btn-primary btn-lg">Contact Us</button>
+       <p class="mt-4">Copyright 2022,.....</p>
     </div>
   </div>
 </body>
